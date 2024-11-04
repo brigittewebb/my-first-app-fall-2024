@@ -20,6 +20,15 @@ Install packages:
 pip install -r requirements.txt
 ```
 
+[Obtain an API Key](https://www.alphavantage.co/support/#api-key) from AlphaVantage.
+
+Create a ".env" file and add contents like the following (using your own AlphaVantage API Key):
+
+```sh
+# this is the ".env" file:
+ALPHAVANTAGE_API_KEY="..."
+```
+
 ## Usage
 
 Run the example script:
@@ -31,5 +40,7 @@ python app/my_script.py
 Run the unemployment report:
 
 ```sh
-ALPHAVANTAGE_API_KEY="..." python app/unemployment.py
+# ALPHAVANTAGE_API_KEY="..." python app/unemployment.py <- do not need to prefix the run command with the variable any more since it is defined in the .env file
+
+python app/unemployment.py
 ```
