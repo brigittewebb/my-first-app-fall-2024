@@ -22,9 +22,13 @@ pip install -r requirements.txt
 
 [Obtain an API Key](https://www.alphavantage.co/support/#api-key) from AlphaVantage.
 
-TODO include instructions here for signing up for email sending platform (e.g. Sendgrid). Obtain sendgrid API Key, and set the key and your sender address as environment variables.
+To use SendGrid for sending email, you must first follow some setup instructions to create an account, verify your account, setup a single sender address and verify it, then finally obtain an API Key:
 
-Create a ".env" file and add contents like the following (using your own AlphaVantage API Key):
+1. First, [sign up for a SendGrid account](https://login.sendgrid.com/unified_login/start?screen_hint=signup), and click the verification link sent to your email address.
+2. Then follow the instructions to complete your "Single Sender Verification", and click the verification link sent in another confirmation email to verify your single sender address (i.e. the SENDGRID_SENDER_ADDRESS). You should be able to access these settings via the "Sender Authentication" section of the settings menu.
+3. Finally, [create a SendGrid API Key](https://login.sendgrid.com/login/identifier?redirect_to=%2Fsettings%2Fapi_keys) with "full access" permissions (i.e. the SENDGRID_API_KEY). You should be able to access these settings via the "API Keys" section of the settings menu.
+
+Create a ".env" file and add contents like the following (using your own AlphaVantage and SendGrid API Keys):
 
 ```sh
 # this is the ".env" file:
