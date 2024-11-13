@@ -52,13 +52,17 @@ Run the unemployment report:
 ```sh
 # ALPHAVANTAGE_API_KEY="..." python app/unemployment.py <- do not need to prefix the run command with the variable any more since it is defined in the .env file
 
-python app/unemployment.py
+# python app/unemployment.py # After refactoring, have to access the file a different way since it imports from another local file (now have to use modular style invocation to run the file from the command line)
+
+python -m app.unemployment
 ```
 
 Run the stocks report:
 
 ```sh
-python app/stocks.py
+# python app/stocks.py
+
+python -m app.stocks
 ```
 
 Run the example email sending file:
