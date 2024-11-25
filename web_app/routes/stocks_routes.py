@@ -23,7 +23,7 @@ def stocks_dashboard():
         print("FORM DATA:", request_data)
     else:
         # for data sent via GET request, url params are in request.args
-        request_data = dict(request.args)
+        request_data = dict(request.args) # /stocks/dashboard?symbol=GOOGL
         print("URL PARAMS:", request_data)
 
     # Grabbing some data from the dictionary sent by the form (or URL parameters)
@@ -36,7 +36,7 @@ def stocks_dashboard():
         latest_date = df.iloc[0]["timestamp"]
         data = df.to_dict("records") # List of dictionaries
 
-        #flash("Fetched Real-time Market Data!", "success")
+        flash("Fetched Real-time Market Data!", "success") # First parameter is message to display, second parameter is bootstrap color code
         return render_template("stocks_dashboard.html",
             symbol=symbol,
             latest_close_usd=latest_close_usd,
@@ -46,7 +46,7 @@ def stocks_dashboard():
     except Exception as err:
         print('OOPS', err)
 
-        #flash("Market Data Error. Please check your symbol and try again!", "danger")
+        flash("Market Data Error. Please check your symbol and try again!", "danger")
         return redirect("/stocks/form")
 
 #
