@@ -1,0 +1,32 @@
+{% extends "bootstrap_5_layout.html" %}
+{% set page_title = "Drinks Challenge" %}
+{% set active_page = "drinks_challenge" %}
+
+{% block content %}
+
+    <h1>Drinks Challenge</h1>
+
+    {% if data|length > 0 %}
+
+        <!--div class="container"-->
+        <div class="row">
+            {% for item in data %}
+                <div class="col">
+                    <div class="card" style="width: 18rem; margin-bottom: 20px;">
+                        <img class="card-img-top" src="{{ item.strDrinkThumb }}" alt="an image of '{{ item.strDrink }}'">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.strDrink }}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <!--/div-->
+
+    {% else %}
+
+        <p>Oops, no products found.</p>
+
+    {% endif %}
+
+{% endblock %}
