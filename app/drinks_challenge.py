@@ -19,8 +19,6 @@ def fetch_drinks_json(n=20):
 
     return drinks_list
 
-fetch_drinks_json()
-
 if __name__ == "__main__":
 
     data = fetch_drinks_json()
